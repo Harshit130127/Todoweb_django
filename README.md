@@ -39,13 +39,13 @@ CSRF protected
 
 ## AUTHENTICATION
 
->Signup: create username, email, and password
+> Signup: create username, email, and password
 
->Login: validate credentials using Django's auth system
+> Login: validate credentials using Django's auth system
 
->Logout: ends the session
+> Logout: ends the session
 
->All tasks are linked to logged in users only
+> All tasks are linked to logged in users only
 
 
 
