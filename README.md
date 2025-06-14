@@ -5,23 +5,23 @@ A clean, modern Todo List Web Application built using **Django** as the backend.
 
 ##  Features
 
-**User Authentication** (Sign Up, Login, Logout)
+- **User Authentication** (Sign Up, Login, Logout)
 
-**Create Tasks** with a title
+- **Create Tasks** with a title
 
-**Mark Tasks as Completed**
+- **Mark Tasks as Completed**
 
-Completed Tasks turn **green**
+- Completed Tasks turn **green**
 
-**Delete Tasks** instantly
+- **Delete Tasks** instantly
 
-**Edit Task** inline
+- **Edit Task** inline
 
-Each user's tasks are isolated and private
+- Each user's tasks are isolated and private
 
-**Responsive Design** using custom CSS
+- **Responsive Design** using custom CSS
 
-CSRF protected
+- CSRF protected
 
 
 ## Tech Stack
