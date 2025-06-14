@@ -1,4 +1,4 @@
-# TODO WEBSITE USING DJANGO AS BACKEND 
+# TODO WEBSITE USING DJANGO 
 
 A clean, modern Todo List Web Application built using **Django** as the backend. Users can register, log in, create, complete, update, and delete tasks. Each user gets a private, personalized todo list.
 
