@@ -1,0 +1,77 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Meta Tags for Character Encoding and Responsive Design -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+
+    <!-- Google Fonts: Poppins -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" />
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Font Awesome 5 Brands:wght@400&display=swap" />
+</head>
+
+<body>
+    <!-- Main Container for SignUp Page -->
+    <div class="signup-login">
+        <!-- Signup Box Wrapper -->
+        <div class="signup-box">
+            
+            <!-- Signup Form -->
+            <form method="post">
+                {% csrf_token %}
+
+                <!-- Form Heading -->
+                <div class="heading">
+                    SignUp
+                </div>
+
+                <!-- Decorative Line -->
+                <div class="line"></div>
+
+                <!-- Username Field -->
+                <div class="field">
+                    <b>Username</b>
+                    <input class="inp" type="text" name="full_name" required placeholder="Enter Your Full Name">
+                </div>
+
+                <!-- Email Field -->
+                <div class="field">
+                    <b>Email</b>
+                    <input class="inp" type="email" name="email_id" required placeholder="Enter Your Username">
+                </div>
+
+                <!-- Password Field -->
+                <div class="field">
+                    <b>Password</b>
+                    <input class="inp" type="password" name="password" required placeholder="Enter Password">
+                </div>
+
+                <!-- Submit Button -->
+                <div class="field">
+                    <input class="submit-button" type="submit" value="Signup">
+                </div>
+
+                <!-- Decorative Line -->
+                <div class="line"></div>
+
+                <!-- Redirect to Login Page -->
+                <div class="field">
+                    <b style="margin-left:130px;">Already have an account?</b>
+                    <br>
+                    <a class="anc" href="/login">Login</a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

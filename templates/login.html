@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Character Encoding and Responsive Meta Tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+  <!-- Custom CSS File -->
+  <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+
+  <!-- Google Fonts: Poppins -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" />
+
+  <!-- (Optional) Font Awesome 5 Brands – might not be needed unless you use brand icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Font Awesome 5 Brands:wght@400&display=swap" />
+</head>
+
+<body>
+  <!-- Main Wrapper for Centering Login Box -->
+  <div class="signup-login">
+
+    <!-- Login Form Container -->
+    <div class="signup-box1">
+
+      <!-- Login Form -->
+      <form method="post">
+        {% csrf_token %}
+
+        <!-- Heading -->
+        <div class="heading">Login</div>
+
+        <!-- Decorative Line Separator -->
+        <div class="line"></div>
+
+        <!-- Username Input Field -->
+        <div class="field">
+          <b>Username</b>
+          <input class="inp" type="text" name="full_name" required placeholder="Enter Your Username">
+        </div>
+
+        <!-- Password Input Field -->
+        <div class="field">
+          <b>Password</b>
+          <input class="inp" type="password" name="password" required placeholder="Enter Password">
+        </div>
+
+        <!-- Submit/Login Button -->
+        <div class="field">
+          <input class="submit-button" type="submit" value="Login">
+        </div>
+
+        <!-- Decorative Line Separator -->
+        <div class="line"></div>
+
+        <!-- Signup Redirect Link -->
+        <div class="field">
+          <b style="margin-left:130px;">Don't have an account? </b><br>
+          <a class="anc" href="/">Signup</a>
+        </div>
+
+      </form>
+    </div>
+    
+  </div>
+</body>
+
+</html>

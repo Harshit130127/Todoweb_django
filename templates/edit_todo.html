@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo</title>
+
+    <!-- Local CSS Files -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+
+    <!-- Google Fonts: Poppins -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" />
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Font Awesome 5 Brands:wght@400&display=swap" />
+    <script src="https://kit.fontawesome.com/cb792c0850.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- Main Container -->
+    <div class="signup-login">
+        
+        <!-- Todo Edit Box -->
+        <div class="signup-box scr">
+
+            <!-- Page Heading -->
+            <div class="heading">Get Things Done?</div>
+
+            <!-- Task Update Form -->
+            <form method="post">
+                {% csrf_token %}
+                
+                <!-- Input for Task Title -->
+                <input type="text" name="title" required class="todo-input inp" placeholder="What is the task today?" value="{{ obj.title }}">
+
+                <!-- Hidden Input to Store Task Serial Number -->
+                <input type="hidden" name="serial_number" value="{{ obj.serial_number }}">
+                
+                <!-- Submit Button to Update Task -->
+                <input class="submit-button" type="submit" value="Update Task">
+            </form>
+
+            <!-- Loop Through and Display All User Tasks -->
+            {% for todo in res %}
+            <div class="Todo clickable-div {% if todo.status %}todo-green{% else %}todo-red{% endif %}">
+                
+                <!-- Display Serial Number and Title -->
+                <h5>{{ todo.serial_number }}</h5>
+                <p>{{ todo.title }}</p>
+
+                <div>
+                    <!-- Edit Icon -->
+                    <a href="#"><i class="fa-solid fa-pen-to-square"></i></a>
+
+                    <!-- Delete Icon -->
+                    <a href="/delete_todo/{{ todo.serial_number }}"><i class="fa-solid fa-trash"></i></a>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <script src="{% static 'js/todo.js' %}"></script>
+</body>
+
+</html>

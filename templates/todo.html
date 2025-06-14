@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page Title -->
+    <title>Todo</title>
+
+    <!-- External Stylesheets -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Font Awesome 5 Brands:wght@400&display=swap" />
+    
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/cb792c0850.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Outer Wrapper -->
+    <div class="signup-login">
+        <div>
+            <!-- Welcome User -->
+            <div>
+                <h1>Hello {{ user }}</h1>
+            </div>
+
+            <!-- Main Todo Box -->
+            <div class="signup-box scr">
+
+                <!-- Header with Logout Icon -->
+                <div class="heads">
+                    <div class="heading">Get Things Done?</div>
+                    <div class="anca">
+                        <!-- Logout Link -->
+                        <a href="{% url 'signout' %}" class="sign">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Form to Add Todo Task -->
+                <form method="post">
+                    {% csrf_token %}
+                    <input type="text" name="title" required class="todo-input inp" placeholder="What is the task today?">
+                    <input class="submit-button" type="submit" value="Add Task">
+                </form>
+
+                <!-- Display Todo List -->
+                {% for todo in user_todo_list %}
+                    <!-- Individual Todo Item -->
+                    <div class="Todo clickable-div {% if todo.status %} todo-green {% else %} todo-red {% endif %}">
+                        
+                        <!-- Todo Title (with strikethrough if completed) -->
+                        <p class="{% if todo.status %} completed {% endif %}">{{ todo.title }}</p>
+
+                        <!-- Action Buttons: Mark Done, Edit, Delete -->
+                        <div>
+                            {% if not todo.status %}
+                            <!-- Mark as Done -->
+                            <form method="post" action="{% url 'mark_done' todo.serial_number %}" style="display:inline;">
+                                {% csrf_token %}
+                                <button type="submit" class="done-button">
+                                    <i class="fa-solid fa-check"></i>
+                                </button>
+                            </form>
+                            {% endif %}
+
+                            <!-- Edit Todo -->
+                            <a href="/edit_todo/{{ todo.serial_number }}">
+                                <i class="fa-solid fa-pen-to-square"></i>
+                            </a>
+
+                            <!-- Delete Todo -->
+                            <a href="/delete_todo/{{ todo.serial_number }}">
+                                <i class="fa-solid fa-trash"></i>
+                            </a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="{% static 'js/todo.js' %}"></script>
+</body>
+</html>

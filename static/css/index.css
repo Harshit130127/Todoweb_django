@@ -1,0 +1,188 @@
+/* Base Reset & Body */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
+  color: #ffffff;
+  font-size: 16px;
+}
+
+/*  Center Container */
+.signup-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Common Card Style */
+.box, .signup-box, .signup-box1 {
+  background-color: rgba(255, 255, 255, 0.07);
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  width: 100%;
+  max-width: 520px;
+  padding: 30px 25px;
+  box-sizing: border-box;
+  backdrop-filter: blur(10px);
+}
+
+/* Box Height Variants*/
+.signup-box {
+  min-height: 600px;
+}
+.signup-box1 {
+  min-height: 500px;
+}
+
+/*  Headings  */
+.heading {
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 25px;
+  color: #f0eaff;
+}
+
+/*  Labels  */
+b {
+  display: block;
+  font-size: 17px;
+  font-weight: 500;
+  margin: 15px 5px 5px;
+  color: #dedaf0;
+}
+
+/*  Input Fields  */
+.inp {
+  width: 90%;
+  height: 48px;
+  border-radius: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  font-size: 16px;
+  padding: 0 15px;
+  transition: border-color 0.3s ease;
+}
+
+.inp:focus {
+  outline: none;
+  border-color: #9b59b6;
+}
+
+.inp::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Submit Button  */
+.submit-button {
+  width: 96%;
+  height: 48px;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #9b59b6, #8e44ad);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 18px;
+  margin-top: 25px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #b47fe8;
+  transform: scale(1.04);
+}
+
+/* Divider Line  */
+.line {
+  margin: 30px 0;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.25);
+  border: none;
+}
+
+/* Navigation Links */
+.anc {
+  display: block;
+  text-align: center;
+  color: #ffe082;
+  font-size: 20px;
+  font-weight: 500;
+  text-decoration: none;
+  margin-top: 10px;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #fffd96;
+}
+
+/*  Top Head Icons / Links  */
+.heads {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.anca, .ancaa {
+  font-size: 24px;
+  cursor: pointer;
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+.anca:hover, .ancaa:hover {
+  color: #ffb3b3;
+}
+
+/*  To-do Task List  */
+.Todo {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-left: 6px solid transparent;
+  padding: 15px 20px;
+  margin-top: 15px;
+  border-radius: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+.todo-red {
+  border-left-color: #e74c3c;
+}
+
+.todo-green {
+  border-left-color: #2ecc71;
+}
+
+/* Task Title  */
+.Todo p {
+  margin: 0;
+  font-size: 18px;
+  flex: 1;
+  color: #f0f0f0;
+}
+
+.completed {
+  color: #a29bfe;
+  text-decoration: line-through;
+}
+
+/*  Task Action Icons  */
+.Todo a {
+  margin-left: 12px;
+  color: #ffe082;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.Todo a:hover {
+  color: #fff74c;
+}

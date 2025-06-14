@@ -1,0 +1,8 @@
+asgiref==3.8.1
+Django==5.2.3
+pillow @ file:///D:/bld/pillow_1746646257525/work
+setuptools==78.1.1
+sqlparse==0.5.3
+tzdata==2025.2
+wheel==0.45.1
+# The following packages are for development purposes
